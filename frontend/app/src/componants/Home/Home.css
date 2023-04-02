@@ -1,0 +1,43 @@
+a{
+   text-decoration: none;
+}
+
+*{
+    overflow-x: hidden;
+}
+
+.heading{
+    width: 30%;
+    overflow-y: hidden;
+    font-size: medium;
+}
+
+.sub{
+    position: absolute;
+width: 854px;
+height: 314px;
+left: 154px;
+top: 270px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 64px;
+line-height: 78px;
+
+color: #000000;
+
+}
+
+.avatar{
+    position: absolute;
+/* width: 1459px;
+height: 891px; */
+left: 160px;
+top: 93px;
+
+}
+
+.bg{
+    background-color: #F7CCCC;
+}
