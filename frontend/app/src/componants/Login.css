@@ -1,0 +1,52 @@
+.login {
+    width: 40%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    
+}
+
+.form-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    background-color: white;
+    
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    padding-right: 2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #f8d7da;
+}
+
+input[type="submit"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.5rem;
+}

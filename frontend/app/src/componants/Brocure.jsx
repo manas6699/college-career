@@ -3,12 +3,12 @@ import React from 'react'
 const Brocure = () => {
   return (
     <>
-    
-    <div>
+
+      <div>
         <h1>
-        Brochure for college
-          </h1>
-    </div>
+          Brochure for college
+        </h1>
+      </div>
     </>
   )
 }

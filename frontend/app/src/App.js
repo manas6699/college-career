@@ -3,6 +3,7 @@ import Brocure from "./componants/Brocure";
 import Home from "./componants/Home/Home"
 
 import { BrowserRouter, Route , Routes} from "react-router-dom";
+import Login from "./componants/Login";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<Home/>} />
       <Route path="/brochure" element={<Brocure/>} />
       <Route path="/contact" element={<About/>} />
+      <Route path="/login" element={<Login/>} />
       
       
     </Routes>
