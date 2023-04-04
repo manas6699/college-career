@@ -6,7 +6,7 @@ a {
     overflow-x: hidden;
 }
 
-.heading{
+.heading {
     width: 40%;
     font-family: 'Montserrat';
 }
@@ -25,13 +25,25 @@ a {
 }
 
 .header {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;
     overflow-y: hidden;
     text-align: center;
 }
+.bg-dark{
+    background-color: black;
+}
 
+.centered{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
 .bg {
-    background-color: #F7CCCC;
+    background-color: #f8d7d7;
 }
 
 .avatar {
@@ -41,6 +53,12 @@ a {
     left: 238px;
     top: 88px;
 
+}
+
+.cardStyle1 {
+    background-color: #f8d7d7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
 }
 
 h4 {

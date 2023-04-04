@@ -4,6 +4,10 @@ import Logo from "../../assets/logo.png"
 import bg from '../../assets/bg.png'
 import avatar from '../../assets/avatar2.png'
 import Members from "../Members.jsx"
+import Notice from '../Notice';
+import Tpo from '../Tpo';
+import Contacts from '../Contacts';
+import Footer from '../Footer';
 
 const Home = () => {
   return (
@@ -76,7 +80,10 @@ const Home = () => {
       </div>
 
       <Members />
-
+      <Notice/>
+      <Tpo/>
+      <Contacts/>
+      <Footer/>
     </>
 
   )
