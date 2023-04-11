@@ -1,6 +1,12 @@
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen('3001', () => {
   console.log('Server started on port 3001');
@@ -32,11 +38,10 @@ app.get('/createuser', (req, res) => {
 });
 
 
-
 app.get('/', (req, res) => {
   let post = {name: 'Thor'};
-  let sql2 = 'INSERT INTO user SET ?';
-  db.query(sql2, post, (err, result) => {
+  let sqlInsert = 'INSERT INTO user SET ?';
+  db.query(sqlInsert, post, (err, result) => {
     if (err) throw err;
     console.log(result);
     res.send('User added...');
@@ -44,12 +49,27 @@ app.get('/', (req, res) => {
   });
 });
 
-
-app.get('/p', (req, res) => {
+// api to get the data from the database to frontend
+  // testing 
+app.get('/admin', (req, res) => {
   db.query('SELECT * FROM user', (err, result) => {
     if (err) throw err;
     console.log(result);
-    res.send('User fetched...' + result[0].name +"..." + result[1].name);
+    res.send(result);
   });
+});
+
+
+// api to insert the data from the frontend to database
+app.post('/post', (req, res) => {
+  const name = req.body.name;
+  const company = req.body.Company;
+  const sqlInsert = 'INSERT INTO user (name, company) VALUES (?, ?)';
+  db.query(sqlInsert, [name, company], (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  }
+  );
 });
 
