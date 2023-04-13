@@ -64,8 +64,9 @@ app.get('/admin', (req, res) => {
 app.post('/post', (req, res) => {
   const name = req.body.name;
   const company = req.body.Company;
-  const sqlInsert = 'INSERT INTO user (name, company) VALUES (?, ?)';
-  db.query(sqlInsert, [name, company], (err, result) => {
+  const salary = req.body.Salary;
+  const sqlInsert = 'INSERT INTO user (name, company , salary) VALUES (?, ? , ?)';
+  db.query(sqlInsert, [name, company , salary], (err, result) => {
     if (err) throw err;
     console.log(result);
     res.send(result);
@@ -73,3 +74,40 @@ app.post('/post', (req, res) => {
   );
 });
 
+
+//api to delete the data from the database
+app.delete('/delete/:id', (req, res) => {
+  const id = req.params.id;
+  const sqlDelete = 'DELETE FROM user WHERE id = ?';
+  db.query(sqlDelete, id, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  });
+});
+
+
+//api to update the data from the database---> view part
+app.get('/admin/edit/:id', (req, res) => {
+  const id = req.params.id;
+  const sqlGet = 'SELECT * FROM user WHERE id = ?';
+  db.query(sqlGet, id, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  });
+});
+// api to update the data from the database---> update part
+app.put('/admin/update/:id', (req, res) => {
+  const id = req.params.id;
+  const name = req.body.name;
+  const company = req.body.Company;
+  const salary = req.body.Salary;
+  const sqlUpdate = 'UPDATE user SET name = ? , company = ? , salary = ? WHERE id = ?';
+  db.query(sqlUpdate, [name, company , salary, id], (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  }
+  );
+});

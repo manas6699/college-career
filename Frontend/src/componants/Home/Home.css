@@ -4,6 +4,7 @@ a {
 
 * {
     overflow-x: hidden;
+    
 }
 
 .heading {
@@ -41,9 +42,33 @@ a {
     justify-content: center;
     text-align: center;
 }
+.button{
+    background-color: #f2dddd;
+    border-radius: 10px;
+   
+    height: 50px;
+    font-family: 'Montserrat';
+    /* font-weight: 700; */
+    /* font-size: 24px;
+    line-height: 29px; */
+    text-align: center;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    overflow-y: hidden;
+}
+
+.button:hover{
+    color: #540909;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 800;
+}
 
 .bg {
-    background-color: #f8d7d7;
+    background-color: #f2dddd;
 }
 
 .avatar {
@@ -55,16 +80,43 @@ a {
 
 }
 
-.cardStyle1 {
-    background-color: #f8d7d7;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
-    border-radius: 10px;
+h2 {
+    overflow-y: hidden;
+    font-size: larger;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    color: rgb(255, 255, 255);
+    font-weight: 800;
 }
 
+h1{
+    overflow-y: hidden;
+}
 h4 {
     overflow-y: hidden;
+    backdrop-filter: blur(8px);
+    font-family: 'Montserrat';
+}
+h5 ,p{
+    overflow-y: hidden;
+    backdrop-filter: blur(8px);
+    font-family: 'Montserrat';
 }
 
-h1 {
-    overflow-y: hidden;
+
+.Link{
+    text-decoration: none;
+    font-family: 'Montserrat';
+    color: #4b1515;
+    
+}
+.Link:hover{
+    color: #540909;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 800;
 }

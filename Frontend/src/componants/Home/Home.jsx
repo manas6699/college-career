@@ -1,5 +1,8 @@
 import React, { useState, useEffect, Component } from "react";
 import "../Home/Home.css";
+import c1 from "../../assets/c-1.jpg";
+import c2 from "../../assets/c-2.jpg";
+import c3 from "../../assets/c-3.jpg";
 import Logo from "../../assets/logo.png";
 import bg from "../../assets/bg.png";
 import avatar from "../../assets/avatar2.png";
@@ -22,17 +25,22 @@ const Home = () => {
               Berhampore
             </h4>
 
-            <a href="/brochure"> Brochure</a>
+            <a className="Link" href="/Brochure" >
+              
+              Brochure
+            </a>
 
-            <a href="/contact"> Contact</a>
+            <a className="Link" href="/contact">
+              
+              Contact
+            </a>
 
             <button
-              type="button"
-              class="btn btn-primary"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
+              className="button"
             >
-              Log in
+              Log In
             </button>
 
             <div
@@ -93,7 +101,11 @@ const Home = () => {
                       Close
                     </button>
                     <Link to="admin">
-                      <button type="button" class="btn btn-success"  data-bs-dismiss="modal">
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        data-bs-dismiss="modal"
+                      >
                         Log In
                       </button>
                     </Link>
@@ -102,22 +114,13 @@ const Home = () => {
               </div>
             </div>
 
-            <button className="btn  position-relative">
+            <button className="button  position-relative">
               Notice
               <span className="position-absolute top-1 start-60 translate-middle p-1 bg-danger border-light rounded-circle">
                 <span className="visually-hidden">New alerts</span>
               </span>
             </button>
-            <div className="form-check form-switch">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="flexSwitchCheckDefault"
-              />
-              <label className="form-check-label" for="flexSwitchCheckDefault">
-                Dark Mode
-              </label>
-            </div>
+            
           </nav>
 
           <div
@@ -149,18 +152,18 @@ const Home = () => {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active" data-bs-interval="10000">
-                <img src={Logo} className="d-block w-100" alt="..." />
+                <img src={c1} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
+                  <h2>First slide label</h2>
                   <p>
                     Some representative placeholder content for the first slide.
                   </p>
                 </div>
               </div>
               <div className="carousel-item" data-bs-interval="2000">
-                <img src={bg} className="d-block w-100" alt="..." />
+                <img src={c2} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
+                  <h2>Second slide label</h2>
                   <p>
                     Some representative placeholder content for the second
                     slide.
@@ -168,9 +171,9 @@ const Home = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={avatar} className="d-block w-100" alt="..." />
+                <img src={c3} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
+                  <h2>Third slide label</h2>
                   <p>
                     Some representative placeholder content for the third slide.
                   </p>

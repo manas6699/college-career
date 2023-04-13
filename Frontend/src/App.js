@@ -8,6 +8,7 @@ import Records from "./componants/Records";
 import AddEdit from "./componants/AddEdit";
 
 
+
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
 
           <Route path="admin" element={<Admin />} />
           <Route path="admin/add" element={<AddEdit />} />
+          <Route path="admin/edit/:id" element={<AddEdit />} />
           <Route path="records" element={<Records />} />
         </Routes>
       </BrowserRouter>
