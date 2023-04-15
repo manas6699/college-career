@@ -3,126 +3,18 @@ import "../Home/Home.css";
 import c1 from "../../assets/c-1.jpg";
 import c2 from "../../assets/c-2.jpg";
 import c3 from "../../assets/c-3.jpg";
-import Logo from "../../assets/logo.png";
-import bg from "../../assets/bg.png";
-import avatar from "../../assets/avatar2.png";
 import Members from "../Members.jsx";
 import Notice from "../Notice";
 import Tpo from "../Tpo";
 import Contacts from "../Contacts";
-import Footer from "../Footer";
 import { Outlet, Link } from "react-router-dom";
-
+import GotoTop from "../GotoTop";
 const Home = () => {
   return (
-    <>
+    <>  
       <div className="bg">
-        <div className="container">
-          <nav className="navbar navbar-light">
-            <img className="img-fluid" src={Logo} alt="Logo" />
-            <h4 className="heading">
-              Government College Of Engineering and Textile Technology ,
-              Berhampore
-            </h4>
-
-            <a className="Link" href="/Brochure" >
-              
-              Brochure
-            </a>
-
-            <a className="Link" href="/contact">
-              
-              Contact
-            </a>
-
-            <button
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              className="button"
-            >
-              Log In
-            </button>
-
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                      Admin login
-                    </h5>
-
-                    <div class="container">
-                      <div class="mb-3">
-                        <label
-                          for="exampleFormControlInput1"
-                          class="form-label"
-                        >
-                          Enter Admin Id
-                        </label>
-                        <input
-                          class="form-control"
-                          id="exampleFormControlInput1"
-                        />
-                      </div>
-                      <div>
-                        <label for="inputPassword" class="form-label">
-                          Password
-                        </label>
-
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="inputPassword"
-                        />
-                      </div>
-
-                      {/* <Outlet/> */}
-                    </div>
-                    {/* <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button> */}
-                  </div>
-                  {/* <div class="modal-body">...</div> */}
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <Link to="admin">
-                      <button
-                        type="button"
-                        class="btn btn-success"
-                        data-bs-dismiss="modal"
-                      >
-                        Log In
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button className="button  position-relative">
-              Notice
-              <span className="position-absolute top-1 start-60 translate-middle p-1 bg-danger border-light rounded-circle">
-                <span className="visually-hidden">New alerts</span>
-              </span>
-            </button>
-            
-          </nav>
-
+        
+        <div className="container my-4">
           <div
             id="carouselExampleDark"
             className="carousel carousel-dark slide"
@@ -212,14 +104,10 @@ const Home = () => {
       <Notice />
       <Tpo />
       <Contacts />
-      <Footer />
+      <GotoTop />
     </>
   );
 };
 
 export default Home;
 
-// nodeMcu  ESP8266: 415
-// MPU6050 ACCELEROMETER : 227
-// soldering machine : 196
-// flexible pcb : 7.50 dollar

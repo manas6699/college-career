@@ -12,9 +12,15 @@
     "mdb-react-ui-kit": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hooks": "^1.0.1",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
+    "react-tsparticles": "^2.9.3",
+    "react-wavify": "^1.8.0",
+    "tsparticles": "^2.9.3",
+    "wavify": "^1.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

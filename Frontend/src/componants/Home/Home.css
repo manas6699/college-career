@@ -7,6 +7,30 @@ a {
     
 }
 
+.top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 38px;
+    border: none;
+    outline: none;
+   
+    color: #654343;
+    cursor: pointer;
+    padding: 5px;
+    
+    transition-duration: 0.4s;
+}
+.top-button:hover {
+    
+    color: #540909;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 800;
+    transform: translateY(-5px);
+}
+
 .heading {
     width: 40%;
     font-family: 'Montserrat';
@@ -43,7 +67,7 @@ a {
     text-align: center;
 }
 .button{
-    background-color: #f2dddd;
+    background-color: #ace6e7;
     border-radius: 10px;
    
     height: 50px;
@@ -61,14 +85,14 @@ a {
 }
 
 .button:hover{
-    color: #540909;
+    color: #092154;
     text-decoration: none;
     cursor: pointer;
     font-weight: 800;
 }
 
 .bg {
-    background-color: #f2dddd;
+    background-color: #ace6e7;
 }
 
 .avatar {
@@ -111,11 +135,11 @@ h5 ,p{
 .Link{
     text-decoration: none;
     font-family: 'Montserrat';
-    color: #4b1515;
+    color: #15204b;
     
 }
 .Link:hover{
-    color: #540909;
+    color: #120954;
     text-decoration: none;
     cursor: pointer;
     font-weight: 800;

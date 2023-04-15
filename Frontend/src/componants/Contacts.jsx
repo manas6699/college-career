@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
+
 
 const Contacts = () => {
     return (
         <>
+        
             <div className="bg">
                 <div className="container">
                     <div className="header my-4">
@@ -23,6 +26,7 @@ const Contacts = () => {
                     <button type="button" class="btn btn-success mb-5">Submit 📎</button>
                 </div>
             </div>
+           
         </>
     )
 }
