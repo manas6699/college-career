@@ -16,7 +16,7 @@ a {
     border: none;
     outline: none;
    
-    color: #654343;
+    color: #192397;
     cursor: pointer;
     padding: 5px;
     
@@ -24,7 +24,7 @@ a {
 }
 .top-button:hover {
     
-    color: #540909;
+    color: #4c0b5f;
     text-decoration: none;
     cursor: pointer;
     font-weight: 800;
