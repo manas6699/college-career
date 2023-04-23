@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Members.module.css";
 import "./Home/Home.css";
 import semo from "../assets/semo2.png";
 import "./Home/Home.css";
@@ -7,76 +8,112 @@ const Members = () => {
     <>
       <div className="bg">
         <div class="container">
+          <div className={styles.member_main_container}>
           <div className="my-5">
-            <h1 className="header">Members</h1>
+            <h1 className={styles.heading}>Our Placement Co-ordinator</h1>
           </div>
-          <div class="row">
-            <div class="col">
-              <div class=" p-3 mb-5 ">
-                <div class="rounded">
-                  <div class="card-body">
-                    <img class="middle" src={semo} alt="" />
-                    <p class="card-text align-middle">
-                      With supporting text below
-                    </p>
-                    <a href="#" class="btn btn-warning">
-                      View Details
-                    </a>
-                  </div>
-                </div>
+
+          <div className={styles.main_container}>
+
+            <div className={styles.sub_main_container_mob}>
+            <div className={styles.member_card}>
+              <img className={styles.member_img} src={semo} alt="" />
+                <p class="card-text align-middle">
+                  With supporting text below
+                </p>
+                <a href="#" class="btn btn-warning">
+                  View Details
+                </a>
+            </div>
+
+            <div className={styles.member_card}>
+              <img className={styles.member_img} src={semo} alt="" />
+                <p class="card-text align-middle">
+                  With supporting text below
+                </p>
+                <a href="#" class="btn btn-warning">
+                  View Details
+                </a>
+            </div>
+            </div>
+
+            <div className={styles.sub_main_container_mob}>
+            <div className={styles.member_card}>
+              <img className={styles.member_img} src={semo} alt="" />
+                <p class="card-text align-middle">
+                  With supporting text below
+                </p>
+                <a href="#" class="btn btn-warning">
+                  View Details
+                </a>
+            </div>
+
+
+            
+            <div className={styles.member_card}>
+              <img className={styles.member_img} src={semo} alt="" />
+                <p class="card-text align-middle">
+                  With supporting text below
+                </p>
+                <a href="#" class="btn btn-warning">
+                  View Details
+                </a>
+            </div>
+            </div>
+
+
+            
+
+              <div className={styles.member_card_des}>
+                <img className={styles.member_img} src={semo} alt="" />
+                  <p class="card-text align-middle">
+                    With supporting text below
+                  </p>
+                  <a href="#" class="btn btn-warning">
+                    View Details
+                  </a>
+              </div>
+
+              <div className={styles.member_card_des}>
+                <img className={styles.member_img} src={semo} alt="" />
+                  <p class="card-text align-middle">
+                    With supporting text below
+                  </p>
+                  <a href="#" class="btn btn-warning">
+                    View Details
+                  </a>
+              </div>
+
+              <div className={styles.member_card_des}>
+                <img className={styles.member_img} src={semo} alt="" />
+                  <p class="card-text align-middle">
+                    With supporting text below
+                  </p>
+                  <a href="#" class="btn btn-warning">
+                    View Details
+                  </a>
+               </div>
+            
+
+              <div className={styles.member_card_des}>
+                <img className={styles.member_img} src={semo} alt="" />
+                  <p class="card-text align-middle">
+                    With supporting text below
+                  </p>
+                  <a href="#" class="btn btn-warning">
+                    View Details
+                  </a>
               </div>
             </div>
-            <div class="col">
-              <div class=" p-3 mb-5 ">
-                <div class="rounded">
-                  <div class="card-body">
-                    <img class="middle" src={semo} alt="" />
-                    <p class="card-text align-middle">
-                      With supporting text below
-                    </p>
-                    <a href="#" class="btn btn-warning">
-                      View Details
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col">
-              <div class=" p-3 mb-5 ">
-                <div class="rounded">
-                  <div class="card-body">
-                    <img class="middle" src={semo} alt="" />
-                    <p class="card-text align-middle">
-                      With supporting text below
-                    </p>
-                    <a href="#" class="btn btn-warning">
-                      View Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class=" p-3 mb-5 ">
-                <div class="rounded">
-                  <div class="card-body">
-                    <img class="middle" src={semo} alt="" />
-                    <p class="card-text align-middle">
-                      With supporting text below
-                    </p>
-                    <a href="#" class="btn btn-warning">
-                      View Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div>   
+
         </div>
-      </div>
+     
+
       <div className="bg">
         <div className="container">
-          <p>
+          <p className={styles.member_text}>
           GCETT- Berhampore carries a legacy of 90 years as one of the premier institutes of India. The technology is continuously changing the world & it becomes a challenging task to cater the needs of the industry, but we are proud to say that GCETT-B has faced the challenge successfully. This is possible due to outstanding efforts of our faculty and of the bright students who are selected after a stringent process. Our alumni have achieved tremendous success in all spheres and this bears an eloquent testimony to our efforts.
 
 We take pride in cordially inviting you to participate in our endeavor and look forward to welcoming you to the recruitment process for our be loving students.

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Notice.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";

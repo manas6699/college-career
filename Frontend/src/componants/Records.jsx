@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "./Records.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
