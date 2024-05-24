@@ -166,9 +166,10 @@ const Admin = () => {
         <thead className="thead-dark">
           <tr>
             <th scope="col">Sl No.</th>
+            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Company</th>
-            <th scope="col">Salary</th>
+            <th scope="col">CTC</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -176,6 +177,7 @@ const Admin = () => {
           {data.map((user, index) => (
             <tr key={user.id}>
               <th scope="row">{index + 1}</th>
+              <th scope="row">{user.id}</th>
               <td>{user.name}</td>
               <td>{user.company}</td>
               <td>{user.salary}</td>
