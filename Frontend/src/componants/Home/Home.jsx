@@ -7,7 +7,6 @@ import Members from "../Members.jsx";
 import Notice from "../Notice";
 import Tpo from "../Tpo";
 import Contacts from "../Contacts";
-import { Outlet, Link } from "react-router-dom";
 import GotoTop from "../GotoTop";
 const Home = () => {
   return (
@@ -15,32 +14,31 @@ const Home = () => {
       <div className="bg">
         
         <div className="container-sm my-4">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src={c1} class="d-block w-100" alt="..."/>
+        <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src={c1} className="d-block w-100" alt="..."/>
     </div>
-    <div class="carousel-item">
-      <img src={c2} class="d-block w-100" alt="..."/>
+    <div className="carousel-item">
+      <img src={c2} className="d-block w-100" alt="..."/>
     </div>
-    <div class="carousel-item">
-      <img src={c3} class="d-block w-100" alt="..."/>
+    <div className="carousel-item">
+      <img src={c3} className="d-block w-100" alt="..."/>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
   </button>
 </div>
         </div>
       </div>
 
       <Members />
-      <Notice />
       <Tpo />
       <Contacts />
       <GotoTop />

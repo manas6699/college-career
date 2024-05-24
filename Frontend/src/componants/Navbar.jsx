@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="bg">
+      <div>
         <div className="container my-4">
         <nav className="navbar navbar-light">
             <Link to='/'><img className="img-fluid" src={Logo} alt="Logo" /></Link>
@@ -20,52 +20,51 @@ const Navbar = () => {
             </a>
 
             <Link to='notice' className="Link" href="/notice">
-              Notice
+              Events
             </Link>
 
-            <button
+            <Link className="Link" href="/admin"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
-              className="button"
             >
              Admin Login
-            </button>
+            </Link>
 
             <div
-              class="modal fade"
+              className="modal fade"
               id="exampleModal"
-              tabindex="-1"
+              tabIndex="-1"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
             >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">
                       Admin login
                     </h5>
 
-                    <div class="container">
-                      <div class="mb-3">
+                    <div className="container">
+                      <div className="mb-3">
                         <label
                           for="exampleFormControlInput1"
-                          class="form-label"
+                          className="form-label"
                         >
                           Enter Admin Id
                         </label>
                         <input
-                          class="form-control"
+                          className="form-control"
                           id="exampleFormControlInput1"
                         />
                       </div>
                       <div>
-                        <label for="inputPassword" class="form-label">
+                        <label for="inputPassword" className="form-label">
                           Password
                         </label>
 
                         <input
                           type="password"
-                          class="form-control"
+                          className="form-control"
                           id="inputPassword"
                         />
                       </div>
@@ -74,16 +73,16 @@ const Navbar = () => {
                     </div>
                     {/* <button
                       type="button"
-                      class="btn-close"
+                      className="btn-close"
                       data-bs-dismiss="modal"
                       aria-label="Close"
                     ></button> */}
                   </div>
-                  {/* <div class="modal-body">...</div> */}
-                  <div class="modal-footer">
+                  {/* <div className="modal-body">...</div> */}
+                  <div className="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      className="btn btn-secondary"
                       data-bs-dismiss="modal"
                     >
                       Close
@@ -91,7 +90,7 @@ const Navbar = () => {
                     <Link to="admin">
                       <button
                         type="button"
-                        class="btn btn-success"
+                        className="btn btn-success"
                         data-bs-dismiss="modal"
                       >
                         Log In

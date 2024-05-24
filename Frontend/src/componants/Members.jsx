@@ -11,8 +11,8 @@ const Members = () => {
 
       <div className="bg">
         <div className="container my-4">
-          <div class="row centered">
-            <div class="col">
+          <div className="row centered">
+            <div className="col">
               <div className={styles.card}>
               <div className="my-2">
               <img src={semo} alt="" />
@@ -22,7 +22,7 @@ const Members = () => {
               <p className="my-2">📞01234567890</p>
               </div>
             </div>
-            <div class="col order-5">
+            <div className="col order-5">
             <div className={styles.card}>
             <div className="my-2">
               <img src={semo} alt="" />
@@ -32,7 +32,7 @@ const Members = () => {
               <p className="my-2">📞01234567890</p>
               </div>
             </div>
-            <div class="col order-1">
+            <div className="col order-1">
             <div className={styles.card}>
             <div className="my-2">
               <img src={semo} alt="" />

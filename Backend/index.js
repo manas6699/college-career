@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql = require("mysql");
 const app = express();
+// bodyParser is used for parsing the incoming request bodies in a middleware before you handle it.
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
@@ -11,61 +12,99 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.listen("3001", () => {
   console.log("Server started on port 3001");
 });
+const db = require('./database');
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "manas",
-  password: "manas@1999",
-  database: "ishan",
-  port: 3307,
-});
-
-db.connect((err) => {
-  if (err) throw err;
-  console.log("Connected!");
-});
-
-
-
-app.get("/", (req, res) => {
-  let post = { name: "Thor" };
-  let sqlInsert = "INSERT INTO user SET ?";
-  db.query(sqlInsert, post, (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send("User added...");
-    console.log("Last insert ID:", result.insertId);
+// add an event
+app.post("/postEvent", (req, res) => {
+  const heading = req.body.heading;
+  const body = req.body.body;
+  const image = req.body.image;
+  const sqlInsert = "INSERT INTO event (heading, body, image) VALUES (?, ?, ?)";
+  db.query(sqlInsert, [heading, body, image], (err, result) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      return res.status(500).send('An error occurred while inserting data.');
+    }
+    console.log('Inserted event:', result);
+    res.status(200).send('Event added successfully.');
   });
 });
 
-// api to get the data from the database to frontend
-// testing
-app.get("/admin", (req, res) => {
-  db.query("SELECT * FROM user", (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
-  });
-});
-
-// api to insert the data from the frontend to database
-app.post("/post", (req, res) => {
-  const name = req.body.name;
-  const company = req.body.Company;
-  const salary = req.body.Salary;
-  const sqlInsert =
-    "INSERT INTO user (name, company , salary) VALUES (?, ? , ?)";
-  db.query(sqlInsert, [name, company, salary], (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
-  });
-});
-
-//api to delete the data from the database
+// delete an event
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
-  const sqlDelete = "DELETE FROM user WHERE id = ?";
+  const sqlDelete = "DELETE FROM event WHERE id = ?";
+  db.query(sqlDelete, [id], (err, result) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      return res.status(500).send('An error occurred while deleting data.');
+    }
+    if (result.affectedRows === 0) {
+      return res.status(404).send('Event not found.');
+    }
+    console.log('Deleted event with ID:', id);
+    res.status(200).send('Event deleted successfully.');
+  });
+});
+
+
+// Get all events API
+app.get("/events", (req, res) => {
+  const sqlQuery = 'select * from event';
+  db.query(sqlQuery, (err, result) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      return res.status(500).send('An error occurred while fetching data.');
+    }
+    if (result.length === 0) {
+      return res.status(404).send('No events found.');
+    }
+    res.status(200).json(result);
+    console.log('Fetched events:', result);
+  });
+});
+
+app.get("/", (req, res) => {
+  const sqlQuary = "select * from statistics";
+  db.query(sqlQuary, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
+  })
+});
+
+// api to get a single data from the database
+app.get("/:id", (req, res) => {
+  const id = req.params.id;
+  const sqlGet = "SELECT * FROM statistics WHERE id = ?";
+  db.query(sqlGet, id, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
+
+// // api to insert the data from the frontend to database
+app.post("/postaData", (req, res) => {
+  const id = req.body.id;
+  const name = req.body.name;
+  const company = req.body.company; 
+  const salary = req.body.salary;   
+  // insert an auto incremental id to sql
+  const sqlInsert = "INSERT INTO statistics (name, company, salary) VALUES (?, ?, ?)";
+  db.query(sqlInsert, [name, company, salary], (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("An error occurred while inserting data"); // Send a proper error response
+    }
+    console.log(result);
+    res.status(200).send("Data inserted successfully"); // Send a success response
+  });
+});
+
+// //api to delete the data from the database
+app.delete("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  const sqlDelete = "DELETE FROM statistics WHERE id = ?";
   db.query(sqlDelete, id, (err, result) => {
     if (err) throw err;
     console.log(result);
@@ -73,24 +112,15 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
-//api to update the data from the database---> view part
-app.get("/admin/edit/:id", (req, res) => {
-  const id = req.params.id;
-  const sqlGet = "SELECT * FROM user WHERE id = ?";
-  db.query(sqlGet, id, (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
-  });
-});
-// api to update the data from the database---> update part
-app.put("/admin/update/:id", (req, res) => {
+
+// // api to update the data from the database---> update part
+app.put("/edit/:id", (req, res) => {
   const id = req.params.id;
   const name = req.body.name;
-  const company = req.body.Company;
-  const salary = req.body.Salary;
+  const company = req.body.company;
+  const salary = req.body.salary;
   const sqlUpdate =
-    "UPDATE user SET name = ? , company = ? , salary = ? WHERE id = ?";
+    "UPDATE statistics SET name = ? , company = ? , salary = ? WHERE id = ?";
   db.query(sqlUpdate, [name, company, salary, id], (err, result) => {
     if (err) throw err;
     console.log(result);
@@ -99,12 +129,3 @@ app.put("/admin/update/:id", (req, res) => {
 });
 
 
-// notice secion
-// api to get the notice heading from the database to frontend
-app.get("/admin/notice", (req, res) => {
-  db.query("SELECT * FROM noticetable", (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
-  });
-});

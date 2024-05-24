@@ -6,7 +6,7 @@ const Records = () => {
     const [data, setData] = useState([]);
   
     const loadData = async () => {
-      const result = await axios.get("http://localhost:3001/admin");
+      const result = await axios.get("http://localhost:3001/");
       setData(result.data);
     };
     useEffect(() => {
@@ -14,15 +14,10 @@ const Records = () => {
     }, []);
   
     return (
-      //
-      <div class="container">
-        
-  
-        
-  
+      <div className="container">
         <h1>Our Placement record</h1>
-        <table class="table border shadow">
-          <thead class="thead-dark">
+        <table className="table border shadow">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
@@ -36,7 +31,7 @@ const Records = () => {
                 <tr key={user.id}>
                   <th scope="row">{index + 1}</th>
                   <td>{user.name}</td>
-                    <td>{user.Company}</td>
+                    <td>{user.company}</td>
                 </tr>
               );
             })}

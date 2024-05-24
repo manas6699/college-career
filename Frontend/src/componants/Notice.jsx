@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import "./Home/Home.css";
 
 const Notice = () => {
@@ -10,7 +8,7 @@ const Notice = () => {
   // notice section
 
   const loadNotice = async () => {
-    const result = await axios.get("http://localhost:3001/admin/notice");
+    const result = await axios.get("http://localhost:3001/events");
     setNotice(result.data);
   };
   useEffect(() => {
@@ -18,39 +16,26 @@ const Notice = () => {
   }, []);
   return (
     <>
-      <section id="notice" >
-      <div className="bg">
-        <div className="container">
-          <div className="header my-2">Notice</div>
-          {notice.map((user, index) => {
-            return (
-              
-                <div class="accordion my-2" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header my-4" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            {user.heading}
-                        </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">{user.body}</div>
-                        </div>
-                        </div>
-                </div>
-                
-              
-            );
-          })}
-
-          <div className="centered">
-            <button type="button" class="btn btn-success my-4">
-              View All
-            </button>
-          </div>
-          {/* <button type="button" class="btn btn-dark justify-content-center">View All</button> */}
+    <h1 className="heading"
+    style={{textAlign:"center" , width:"100%"}}
+    >Events</h1>
+   {
+  notice.map((notice) => {
+    return (
+      <div className="container notice-container" key={notice.id}>
+        <div className="notice-content">
+          <h3 className="heading">{notice.heading}</h3>
+          <p>{notice.body}</p>
+          <img src={notice.image} alt="notice" className="notice-image"/>
+        </div>
+        <div className="notice-button-container">
+          <button className="btn btn-primary notice-button">Enroll Now!</button>
         </div>
       </div>
-      </section>
+    );
+  })
+}
+
     </>
   );
 };

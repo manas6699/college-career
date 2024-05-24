@@ -9,6 +9,7 @@ import Contacts from "./componants/Contacts";
 import Footer from "./componants/Footer";
 import Navbar from "./componants/Navbar";
 import Notice from "./componants/Notice";
+import Edit from "./componants/Edit";
 
 
 
@@ -27,7 +28,7 @@ function App() {
 
           <Route path="admin" element={<Admin />} />
           <Route path="admin/add" element={<AddEdit />} />
-          <Route path="admin/edit/:id" element={<AddEdit />} />
+          <Route path="admin/edit/:id" element={<Edit />} />
           <Route path="records" element={<Records />} />
         </Routes>
         <Footer/>
