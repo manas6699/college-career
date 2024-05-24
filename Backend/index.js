@@ -30,6 +30,17 @@ app.post("/postEvent", (req, res) => {
   });
 });
 
+//api to delete the data from the database
+app.delete('/delete/:id', (req , res) => {
+  const id = req.params.id;
+  const sqlDelete = "DELETE FROM statistics WHERE id = ?";
+  db.query(sqlDelete, id, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send(result);
+  });
+})
+
 // delete an event
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
@@ -98,17 +109,6 @@ app.post("/postaData", (req, res) => {
     }
     console.log(result);
     res.status(200).send("Data inserted successfully"); // Send a success response
-  });
-});
-
-// //api to delete the data from the database
-app.delete("/delete/:id", (req, res) => {
-  const id = req.params.id;
-  const sqlDelete = "DELETE FROM statistics WHERE id = ?";
-  db.query(sqlDelete, id, (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
   });
 });
 
