@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.container a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+.container img {
+  vertical-align: middle;
+}
+
+.center {
+  flex-grow: 1;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}

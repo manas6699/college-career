@@ -1,0 +1,56 @@
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.container.notice-container {
+  display: flex;
+  flex-direction: column; /* Ensures the content is arranged vertically */
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notice-content {
+  flex: 1; /* Ensures this section takes up available space */
+}
+
+.notice-content h3.heading {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.notice-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.notice-image {
+  width: 50rem;
+    height: 20rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.button-btn {
+  display: flex;
+  justify-content: flex-start; 
+  width: 100%;
+}
+
+.btn-primary {
+  justify-content: flex-start;
+  margin-top: 1rem;
+  background-color: #006110;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
