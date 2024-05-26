@@ -30,16 +30,28 @@ app.post("/postEvent", (req, res) => {
   });
 });
 
-//api to delete the data from the database
-app.delete('/delete/:id', (req , res) => {
+
+// api to delete the data from the database
+app.delete('/delete/:id', (req, res) => {
   const id = req.params.id;
+  
+  if (!id) {
+    return res.status(400).send({ error: "Invalid ID parameter" });
+  }
+
   const sqlDelete = "DELETE FROM statistics WHERE id = ?";
   db.query(sqlDelete, id, (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send(result);
+    if (err) {
+      console.error("Error deleting data: ", err);
+      return res.status(500).send({ error: "Failed to delete data" });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(404).send({ error: "No data found with the provided ID" });
+    }
+    console.log("Data deleted successfully:", result);
+    res.send({ message: "Data deleted successfully", result });
   });
-})
+});
 
 // delete an event
 app.delete("/delete/:id", (req, res) => {
